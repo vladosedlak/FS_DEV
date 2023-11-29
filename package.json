@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r dotenv/config ./index.js "
+    "dev": "nodemon -r ./index.js "
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/vladosedlak/FS_lesson_01#readme",
   "dependencies": {
-    "dotenv": "^16.3.1",
+   
     "nodemon": "^3.0.1"
   }
 }
