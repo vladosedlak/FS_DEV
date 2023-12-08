@@ -61,6 +61,7 @@
 ## GET /posts?category=1,2,13&sort_by=latest&page=1&perPage=10
 - Zoznam blogov
 - Filter podľa kategórie (defaultne vracia všetky kategórie)
+- Filter podla autora ?author_id=5
 - Moznost zoradit podla:
     - datumu publikovania (latest)
     - popularity
