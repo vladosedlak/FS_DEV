@@ -90,7 +90,7 @@ app.get('/sdownload/:name', async (req,res) => {
   const name = req.params.name;
   const command = new GetObjectCommand({
     Bucket: "lesson7",
-    Key: "cybertruck.jpg",
+    Key: name,
   });
   try {
     const response = await client.send(command);
