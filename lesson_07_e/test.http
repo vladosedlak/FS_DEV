@@ -1,0 +1,12 @@
+@baseUrl = http://127.0.0.1:3000
+
+POST {{baseUrl}}/create
+Content-Type: multipart/form-data; boundary=ImageBoundary
+
+--ImageBoundary
+Content-Disposition: form-data; name="image_field"; filename="text.txt"
+Content-Type: text/html
+
+< ./text.txt
+--ImageBoundary--
+

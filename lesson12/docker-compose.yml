@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+  app:
+    image: lesson11_homework:latest4
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+      - HOST=0.0.0.0

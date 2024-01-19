@@ -1,0 +1,34 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./lesson12
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: ./lesson11-dockerize/package-lock.json
+      - name: Install dependencies
+        run: npm install
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build the Docker image
+        run: |
+          docker build . --tag ghcr.io/vladosedlak/lesson11_container:build_${{ github.run_number }}
+          docker push ghcr.io/vladosedlak/lesson11_container:build_${{ github.run_number }}
