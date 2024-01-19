@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: ./lesson11-dockerize/package-lock.json
+          cache-dependency-path: ./lesson12/package-lock.json
       - name: Install dependencies
         run: npm install
       - name: Login to GitHub Container Registry
